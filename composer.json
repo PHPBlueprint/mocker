@@ -1,0 +1,28 @@
+{
+    "name": "phpblueprint/mocker",
+    "version" : "1.0.0",
+    "type": "library",
+    "description": "PHPBlueprint Mocker Component",
+    "keywords": ["phpblueprint", "blueprint", "scaffold"],
+    "homepage": "https://github.com/phpblueprint",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Damien Rose",
+            "email": "phpblueprint@users.noreply.github.com",
+            "homepage": "https://github.com/phpblueprint",
+            "role": "Developer"
+        }
+    ],
+    "scripts": {
+        "blueprint": "Blueprint\\Console\\Commands\\Embrace::execute"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blueprint\\": ""
+        }
+    }
+}
