@@ -1,19 +1,50 @@
-Code Generation
+# PHPBlueprint - Mocker Component
 
-Within the docblock of a class or script, add the @example tag followed by the code you wish to use
-as the template for following classes
+Easily create and deploy code without rewriting common structures
 
-```php
-@example
-class CLASSNAME extends \Namespace\Extended\Class {
+> Create mockable templates for any PHP code and easily deploy new class structures, models, components, etc.
 
-}
+### Installation/Setup
+
+Install the mocker component using composer
+
+```sh
+$ composer require phpblueprint/mocker
 ```
 
-Usage:
-composer require blueprint/embrace
+Easily create a blueprint of existing classes by added a basic @example tag to the document header
 
-composer blueprint \Foo\Bar\Baz:Sample
+```php
+/**
+ * Class documentation haeder example
+ *
+ * @example
+ * class CLASSNAME extends \Blueprint\Http\Rest\Client {
+ *      protected $param = 'FOO';
+ *      public function __construct() {
+ *
+ *      }
+ * }
+ *
+ * @author Damien Rose <br0kenb1nary@users.noreply.github.com>
+ */
+```
 
-Will create a template for a new Sample class using the template provided within the
-\Foo\Bar\Baz class
+### Usage
+
+To create a new mocker of that class, run the blueprint command with the namespace\class that contains the template document header : the name of the new class you are creating
+
+```sh
+composer blueprint \Namespace\With\Class:NewClassName
+```
+
+Once done, your root directory will contain a new file with mocked code template.
+
+### TODO
+- improve code cleanliness
+- add default namespace support
+- add shortname support
+- add config options to PHPBlueprint json
+- 
+
+If you plan on using PHPBlueprint, any of its components, or if you plan on designing new components following the PHPBlueprint concept, share it and make sure to include PHPBlueprint in a mention or contributor thanks.
